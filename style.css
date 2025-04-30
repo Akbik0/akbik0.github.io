@@ -1,3 +1,4 @@
+/* Base resets and typography */
 body {
   font-family: Arial, sans-serif;
   background-color: #f2f2f2;
@@ -5,6 +6,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Container for centered content */
 .container {
   max-width: 700px;
   margin: 40px auto;
@@ -13,6 +16,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* Profile image */
 .profile {
   width: 150px;
   height: 150px;
@@ -21,20 +26,31 @@ body {
   display: block;
   margin: 0 auto 20px;
 }
+
+/* Headings */
 h1, h2 {
   text-align: center;
   color: #2c3e50;
 }
+
 /* Make only the Home (#home) section full-width */
-home {
+#home {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* If you wrap your home content in .container, remove its constraints too */
+#home .container {
   max-width: none;
   margin: 0;
-  width: 100%;
+  padding: 40px; /* adjust inner gutter as needed */
 }
 
-/* Keep the 1 000 px container on all other sections */
+/* Keep all other sections constrained */
 section:not(#home) {
   max-width: 1000px;
-  margin: auto;
+  margin: 40px auto; /* vertical spacing + centering */
+  padding: 20px;
 }
-
