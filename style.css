@@ -25,3 +25,16 @@ h1, h2 {
   text-align: center;
   color: #2c3e50;
 }
+/* Make only the Home (#home) section full-width */
+home {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+}
+
+/* Keep the 1 000 px container on all other sections */
+section:not(#home) {
+  max-width: 1000px;
+  margin: auto;
+}
+
