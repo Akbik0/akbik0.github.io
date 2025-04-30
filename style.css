@@ -6,90 +6,93 @@
   --text-muted: #bbb;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background: var(--bg);
   color: var(--text-light);
   scroll-behavior: smooth;
 }
 
-/* Header */
+/* HEADER */
 header {
   position: fixed;
-  top: 0;
-  width: 100%;
+  top: 0; left: 0; right: 0;
   background: var(--bg);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 60px;
   z-index: 1000;
 }
-.logo { font-size: 24px; font-weight: bold; }
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
 nav ul {
   list-style: none;
   display: flex;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
+  gap: 32px;
 }
 nav a {
-  text-decoration: none;
   color: var(--text-light);
+  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color .3s;
 }
-nav a:hover { color: var(--accent); }
+nav a:hover {
+  color: var(--accent);
+}
 .menu-toggle {
   display: none;
   font-size: 24px;
   cursor: pointer;
 }
 
-/* Main & Sections */
-main { margin-top: 100px; }
-section {
-  padding: 80px 60px;
-  text-align: center;
-}
-h2 {
-  font-size: 32px;
-  margin-bottom: 24px;
-}
-
-/* Hero */
+/* HERO */
 .hero {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  min-height: 100vh;
+  padding: 0 60px;
+  margin-top: 80px; /* space below fixed header */
 }
 .hero-content {
   max-width: 50%;
-  text-align: left;
 }
 .hero-content h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin: 0;
+  font-size: 3rem;
+  line-height: 1.1;
+  margin-bottom: 16px;
 }
-.role { color: var(--accent); }
+.hero-content .name,
+.hero-content .role {
+  color: var(--accent);
+}
 .hero-content p {
-  margin-top: 24px;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-muted);
+  margin-bottom: 32px;
+}
+.buttons {
+  display: flex;
+  gap: 16px;
 }
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 12px 24px;
   border-radius: 4px;
-  text-decoration: none;
   font-weight: 500;
-  margin-top: 24px;
-  transition: transform 0.3s, background 0.3s;
+  text-decoration: none;
+  transition: transform .3s, background .3s;
 }
 .btn-primary {
   background: var(--accent);
@@ -97,17 +100,28 @@ h2 {
 }
 .btn-primary:hover {
   transform: translateY(-3px);
-  background: #2ac48a;
+}
+.btn-secondary {
+  border: 2px solid var(--accent);
+  color: var(--text-light);
+}
+.btn-secondary:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
 }
 
-/* Hexagon portrait */
+/* HEXAGON IMAGE */
 .hexagon {
   width: 300px;
   height: 346px;
-  clip-path: polygon(25% 5%,75% 5%,100% 50%,75% 95%,25% 95%,0% 50%);
+  clip-path: polygon(
+    25% 5%, 75% 5%,
+    100% 50%,
+    75% 95%, 25% 95%,
+    0% 50%
+  );
   border: 10px solid var(--accent);
   overflow: hidden;
-  flex-shrink: 0;
 }
 .hexagon img {
   width: 100%;
@@ -115,21 +129,26 @@ h2 {
   object-fit: cover;
 }
 
-/* Other sections text */
-#about p,
-#services .services-list,
-#projects p,
-#blog p {
+/* SECTIONS */
+section {
+  padding: 80px 60px;
+  text-align: center;
+}
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+section p,
+.services-list {
   max-width: 700px;
-  margin: 0 auto;
+  margin: auto;
   color: var(--text-light);
   line-height: 1.6;
 }
 .services-list {
   display: flex;
-  gap: 16px;
   justify-content: center;
-  padding: 0;
+  gap: 16px;
   list-style: none;
 }
 .services-list li {
@@ -139,21 +158,35 @@ h2 {
   color: #000;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero { flex-direction: column-reverse; text-align: center; }
-  .hero-content, .hexagon { max-width: 100%; }
-  header { padding: 20px; }
-  .menu-toggle { display: block; }
+  header {
+    padding: 16px 20px;
+  }
   nav ul {
     display: none;
-    flex-direction: column;
-    background: var(--bg);
     position: absolute;
     top: 64px;
-    right: 60px;
-    padding: 20px;
+    right: 20px;
+    background: var(--bg);
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
     border: 1px solid var(--accent);
   }
-  nav ul.open { display: flex; }
+  nav ul.open {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-top: 0;
+    padding: 0 20px;
+  }
+  .hero-content, .hexagon {
+    max-width: 100%;
+  }
 }
