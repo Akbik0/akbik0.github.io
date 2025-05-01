@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,167 +10,184 @@
   <style>
     :root {
       --primary: #1e88e5;
-      --primary-dark: #1565c0;
-      --accent: #42a5f5;
-      --bg: #e3f2fd;
+      --secondary: #43a047;
+      --accent: #f4511e;
+      --bg-light: #fdfdfd;
       --text: #212121;
       --light: #ffffff;
     }
-    html {
-      scroll-behavior: smooth;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: var(--bg-light); color: var(--text); overflow-x: hidden; line-height: 1.6; font-size: 1rem; }
     header {
-      background: var(--primary-dark);
+      background: var(--primary);
       color: var(--light);
       padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex; justify-content: space-between; align-items: center;
+      position: fixed; width: 100%; top: 0; z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    header h1 {
-      font-size: 1.75rem;
-      font-weight: 700;
-    }
+    header h1 { font-size: 1.5rem; }
     nav a {
       color: var(--light);
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: navFadeIn 0.6s forwards;
     }
-    nav a:hover {
-      color: var(--accent);
-    }
+    nav a:nth-child(2) { animation-delay: 0.2s; }
+    nav a:nth-child(3) { animation-delay: 0.3s; }
+    nav a:nth-child(4) { animation-delay: 0.4s; }
+    nav a:hover { color: var(--accent); transform: translateY(-2px); }
     .hero {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--light);
       text-align: center;
-      padding: 6rem 1rem 4rem;
+      padding: 5rem 1rem 3rem;
       margin-top: 4rem;
       border-bottom-left-radius: 50% 10%;
       border-bottom-right-radius: 50% 10%;
-      animation: fadeInDown 1s ease-in-out;
     }
-    .hero h2 {
-      font-size: 2.75rem;
-      margin-bottom: 1rem;
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      border: 3px solid var(--light);
     }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 1.5rem;
-    }
+    .hero h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .hero p { font-size: 1rem; max-width: 700px; margin: 0.5rem auto; }
     .button {
       display: inline-block;
-      padding: 0.6rem 1.2rem;
+      padding: 0.5rem 1rem;
       background: var(--accent);
       color: var(--light);
       text-decoration: none;
       font-weight: 600;
       border-radius: 4px;
       transition: background 0.3s, transform 0.3s;
+      font-size: 0.9rem;
     }
-    .button:hover {
-      background: var(--light);
-      color: var(--primary-dark);
-      transform: translateY(-2px);
-    }
+    .button:hover { background: var(--light); color: var(--accent); transform: translateY(-2px); }
     .section {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 2.5rem auto;
-      padding: 0 1rem;
+      padding: 1.5rem;
+      background: var(--bg-light);
+      transform: translateY(20px);
       opacity: 0;
-      animation: fadeInUp 1s ease-in-out forwards;
+      border-radius: 8px;
+    }
+    .section.visible {
+      transform: translateY(0);
+      opacity: 1;
+      transition: all 0.7s ease-out;
     }
     .section-title {
       text-align: center;
-      font-size: 2rem;
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
       position: relative;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .section-title::after {
       content: '';
       display: block;
-      width: 80px;
-      height: 4px;
+      width: 50px;
+      height: 3px;
       background: var(--accent);
       margin: 0.5rem auto;
       border-radius: 2px;
     }
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: var(--light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border-top: 4px solid var(--accent);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .card h3 {
-      color: var(--primary-dark);
-      margin-bottom: 0.5rem;
-    }
-    .card p {
-      line-height: 1.5;
-    }
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
+    .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
     .skill {
-      background: var(--accent);
+      background: var(--primary);
       color: var(--light);
       padding: 0.5rem 1rem;
       border-radius: 20px;
+      font-size: 0.8rem;
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    .skill.visible {
+      transform: scale(1);
+      opacity: 1;
+      transition: all 0.4s ease-out;
+    }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--light);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-top: 3px solid var(--accent);
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    .card.visible {
+      transform: scale(1);
+      opacity: 1;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
+    .card h3 { color: var(--primary); margin-bottom: 0.5rem; font-size: 1.1rem; }
+    .card p { margin-bottom: 0.5rem; line-height: 1.4; font-size: 0.9rem; }
+    .card ul { list-style: disc inside; margin-bottom: 0.75rem; font-size: 0.9rem; }
+    .contact-form {
+      max-width: 450px;
+      margin: 1rem auto;
+      padding: 1rem;
+      background: var(--bg-light);
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .form-group { margin-bottom: 0.8rem; }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
       font-size: 0.9rem;
-      font-weight: 500;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9rem;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    .contact-form .button {
+      background: var(--secondary);
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .contact-form .button:hover {
+      background: var(--light);
+      color: var(--secondary);
+      transform: translateY(-2px);
     }
     footer {
-      background: var(--primary-dark);
+      background: var(--primary);
       color: var(--light);
       text-align: center;
-      padding: 1.5rem 0;
+      padding: 1rem 0;
       margin-top: 2rem;
+      font-size: 0.9rem;
     }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes navFadeIn { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Abdulkareem Akbik</h1>
@@ -183,14 +199,17 @@
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero section" id="hero">
+    <img src="profile.jpg" alt="Profile Photo" class="profile-img">
     <h2>Hey, I'm Abdulkareem</h2>
-    <p>A Grade 11 student from Milton, Canada, passionate about tech and innovation. I build apps, automate homes, and share 3D printing designs.</p>
+    <p>A Grade 11 student from Milton, Canada, passionate about tech and innovation.</p>
+    <p>I specialize in full-stack development, hardware prototyping, and creative problem solving. Let’s build something impactful together.</p>
     <a href="#contact" class="button">Get in Touch</a>
   </section>
 
-  <section id="skills" class="section" style="animation-delay: 0.3s;">
+  <section id="skills" class="section">
     <h2 class="section-title">Skills</h2>
+    <p>Over the past years, I’ve honed these skills through coursework, personal projects, and hackathons. I’m always learning new technologies to stay ahead of the curve.</p>
     <div class="skills">
       <span class="skill">JavaScript</span>
       <span class="skill">Python</span>
@@ -202,42 +221,89 @@
     </div>
   </section>
 
-  <section id="projects" class="section" style="animation-delay: 0.5s;">
+  <section id="projects" class="section">
     <h2 class="section-title">Projects</h2>
     <div class="projects">
       <div class="card">
         <h3>Verba</h3>
         <p>An AR-based ASL translation app that improves communication and accessibility.</p>
+        <ul>
+          <li>Developed with React Native and TensorFlow.js for cross-platform support</li>
+          <li>Real-time gesture recognition using PoseNet and MediaPipe</li>
+          <li>User-tested in local community centers with positive feedback</li>
+        </ul>
         <a href="#" class="button">View Project</a>
       </div>
       <div class="card">
         <h3>Smart Home Automation</h3>
         <p>A custom homelab and automation system using Raspberry Pi and local servers.</p>
+        <ul>
+          <li>Configured MQTT and Node-RED for device communication</li>
+          <li>Automated lighting and security using Python scripts</li>
+          <li>Documented step-by-step setup on GitHub for community reuse</li>
+        </ul>
         <a href="#" class="button">View Project</a>
       </div>
       <div class="card">
         <h3>3D Printing Showcase</h3>
         <p>A YouTube channel highlighting creative and functional 3D print designs.</p>
+        <ul>
+          <li>Produced over 20 tutorial videos with editing and voice-over</li>
+          <li>Showcased custom printer modifications and filament tests</li>
+          <li>Engaged with a community of 1,000+ subscribers</li>
+        </ul>
         <a href="#" class="button">View Project</a>
       </div>
     </div>
   </section>
 
-  <section id="about" class="section" style="animation-delay: 0.7s;">
+  <section id="about" class="section">
     <h2 class="section-title">About Me</h2>
-    <p>I’m a self-driven student exploring technology through coding, business planning, and hardware experiments. I strive to make an impact by building projects that address real challenges.</p>
+    <p>I’m a self-driven Grade 11 student combining my love for coding, engineering, and design. I enjoy translating ideas into tangible solutions, whether through apps or hardware prototypes.</p>
+    <p>Beyond tech, I volunteer as a peer tutor at school, participate in the robotics club, and explore entrepreneurship through DECA competitions.</p>
+    <p>My future goal is to study computer engineering and work on accessibility technologies that make a real difference.</p>
   </section>
 
-  <section id="contact" class="section" style="animation-delay: 0.9s;">
+  <section id="contact" class="section">
     <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:abdulkareem@akbik.ca">abdulkareem@akbik.ca</a></p>
-    <p>GitHub: <a href="https://github.com/akfik" target="_blank">github.com/akfik</a></p>
-    <a href="/resume.pdf" class="button">Download Resume</a>
+    <p>I’m open to collaborations, tutoring, and new opportunities. Use the form below to send me a message directly.</p>
+    <form action="mailto:kareemakbik0@gmail.com" method="post" enctype="text/plain" class="contact-form">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" placeholder="Your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" placeholder="Your email" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="Message" rows="5" placeholder="Write your message..." required></textarea>
+      </div>
+      <button type="submit" class="button">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <p>&copy; 2025 Abdulkareem Akbik. All rights reserved.</p>
   </footer>
-</body>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('header nav a, .section, .skill, .card').forEach(el => observer.observe(el));
+      const form = document.querySelector('.contact-form');
+      form.addEventListener('submit', function() {
+        alert("Thanks for reaching out! I'll reply as soon as I can.");
+      });
+    });
+  </script>
+</body>
 </html>
