@@ -1,0 +1,69 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 30 Apr 2025 22:29:23 at https://codeefly.net/wp/zyan/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://codeefly.net/wp/zyan/ -O1 "C:\My Web Sites\websitelol" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+22:29:53	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/wp-content/plugins/cf-core/assets/css/fontawesome-all.min.css?ver=1.0.0 (from https://codeefly.net/wp/zyan/)
+22:29:53	Warning: 	Retry after error -5 (Unable to get server's address: No such host is known. ) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/breadcrumb.jpg (from https://codeefly.net/wp/zyan/)
+22:29:53	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/subscribe-scaled.jpg (from https://codeefly.net/wp/zyan/)
+22:30:23	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/1234567890 (from https://codeefly.net/wp/zyan/)
+22:30:24	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/fonts/fa-duotone-900.woff2 (from https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/css/font-awesome-pro.css?ver=1.0.0)
+22:30:24	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/fonts/fa-duotone-900.ttf (from https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/css/font-awesome-pro.css?ver=1.0.0)
+22:30:24	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/img/skills_shape.png (from https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/css/zyan-core.css?ver=1.0.0)
+22:30:24	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/img/banner_shape_1.png (from https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/css/zyan-core.css?ver=1.0.0)
+22:30:24	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/breadcrumb.jpg (from https://codeefly.net/wp/zyan/)
+22:30:24	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/subscribe-scaled.jpg (from https://codeefly.net/wp/zyan/)
+22:30:24	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=400
+22:30:24	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=400 to https://codeefly.net/wp/zyan/one-page/
+22:30:24	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/one-page/index_2.html (from https://codeefly.net/wp/zyan/one-page/)
+22:30:25	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=502
+22:30:25	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=502 to https://codeefly.net/wp/zyan/home-3/
+22:30:25	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=507
+22:30:25	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=507 to https://codeefly.net/wp/zyan/home-4/
+22:30:25	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=512
+22:30:25	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=512 to https://codeefly.net/wp/zyan/home-rtl/
+22:30:42	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=585
+22:30:42	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=585 to https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/
+22:30:43	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/details_big_2-300x212.jpg (from https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/)
+22:30:43	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/details_big_1-300x212.jpg (from https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/)
+22:30:43	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=381
+22:30:43	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=381 to https://codeefly.net/wp/zyan/contact/
+22:30:43	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=154
+22:30:43	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=154 to https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio/
+22:30:43	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=153
+22:30:43	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=153 to https://codeefly.net/wp/zyan/empowering-your-business-with-innovative-solutions-revolutionizing-your-solutions/
+22:30:43	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/breadcrumb.jpg (from https://codeefly.net/wp/zyan/)
+22:30:43	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/subscribe-scaled.jpg (from https://codeefly.net/wp/zyan/)
+22:30:43	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=584
+22:30:43	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=584 to https://codeefly.net/wp/zyan/empowering-your-business-with-innovative-solutions-revolutionizing-your-solutions-2/
+22:30:44	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/blog/page/1/
+22:30:44	Warning: 	File has moved from https://codeefly.net/wp/zyan/blog/page/1/ to https://codeefly.net/wp/zyan/blog/
+22:30:44	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/blog/page/2/1234567890 (from https://codeefly.net/wp/zyan/blog/page/2/)
+22:30:44	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/category/business-advice/1234567890 (from https://codeefly.net/wp/zyan/category/business-advice/)
+22:30:44	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/category/devolopment/1234567890 (from https://codeefly.net/wp/zyan/category/devolopment/)
+22:30:44	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/category/ui-ux-design/1234567890 (from https://codeefly.net/wp/zyan/category/ui-ux-design/)
+22:30:44	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/category/uncategorized/1234567890 (from https://codeefly.net/wp/zyan/category/uncategorized/)
+22:30:44	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/category/web-design/1234567890 (from https://codeefly.net/wp/zyan/category/web-design/)
+22:30:44	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=572
+22:30:44	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=572 to https://codeefly.net/wp/zyan/hello-world-2/
+22:30:44	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/?p=1
+22:30:44	Warning: 	File has moved from https://codeefly.net/wp/zyan/?p=1 to https://codeefly.net/wp/zyan/hello-world/
+22:30:45	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/tag/graphics/1234567890 (from https://codeefly.net/wp/zyan/tag/graphics/)
+22:30:45	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/tag/house/1234567890 (from https://codeefly.net/wp/zyan/tag/house/)
+22:30:45	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/tag/shidtarx/1234567890 (from https://codeefly.net/wp/zyan/tag/shidtarx/)
+22:30:45	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/tag/ui-ux/1234567890 (from https://codeefly.net/wp/zyan/tag/ui-ux/)
+22:30:45	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/tag/ux-design/1234567890 (from https://codeefly.net/wp/zyan/tag/ux-design/)
+22:30:46	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/author/zyan/1234567890 (from https://codeefly.net/wp/zyan/author/zyan/)
+22:30:46	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/details_big_2-300x212.jpg (from https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/)
+22:30:46	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/details_big_1-300x212.jpg (from https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/)
+22:30:46	Warning: 	Moved Permanently for https://codeefly.net/wp/zyan/author/zyan/page/1/
+22:30:46	Warning: 	File has moved from https://codeefly.net/wp/zyan/author/zyan/page/1/ to https://codeefly.net/wp/zyan/author/zyan/
+22:30:46	Error: 	"Not Found" (404) at link https://codeefly.net/wp/zyan/author/zyan/page/2/1234567890 (from https://codeefly.net/wp/zyan/author/zyan/page/2/)
+22:30:46	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/details_big_2-300x212.jpg (from https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/)
+22:30:46	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link https://wp.shsarker.xyz/zyan/wp-content/uploads/2023/10/details_big_1-300x212.jpg (from https://codeefly.net/wp/zyan/the-standard-personal-my-portfolio-2/)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 23 seconds : 245 links scanned, 199 files written (19354958 bytes overall) [11920886 bytes received at 143625 bytes/sec], 12403548 bytes transferred using HTTP compression in 177 files, ratio 32%, 29.0 requests per connection
+(24 errors, 34 warnings, 0 messages)
