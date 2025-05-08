@@ -1,6 +1,6 @@
 {
   "settings": {
-    "currentPage": "Why I created this website.html",
+    "currentPage": "gallery.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -54,7 +54,7 @@
       }
     ],
     "favicon": "@PROJECT_PATH@/assets/images/untitled-design-6.png-128x128.png",
-    "mbrsiteDomain": "brlrv8psmm",
+    "mbrsiteDomain": "ci3sgaxyja",
     "imageResize": true,
     "usedWebp": true,
     "robotsSwitcher": false,
@@ -83,7 +83,8 @@
     "witsec-search-excluded-sections": "",
     "witsec-search-excluded-pages": "404.html",
     "witsec-search": true,
-    "witsec-white-label": true
+    "witsec-white-label": true,
+    "google-analytics": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-E5NZWKX5Q0\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-E5NZWKX5Q0');\n</script>"
   },
   "pages": {
     "index.html": {
@@ -6022,7 +6023,7 @@
     },
     "gallery.html": {
       "settings": {
-        "title": "gallery",
+        "title": "Gallery",
         "order": "2"
       },
       "components": [
