@@ -6095,42 +6095,6 @@ a {
 .cid-tHfEgJYxcL .copyright {
   color: #232323;
 }
-.cid-uKCHMhxwpr {
-  padding-top: 5rem;
-  padding-bottom: 3rem;
-  background-color: #edefeb;
-}
-.cid-uKCHMhxwpr .mbr-fallback-image.disabled {
-  display: none;
-}
-.cid-uKCHMhxwpr .mbr-fallback-image {
-  display: block;
-  background-size: cover;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-}
-.cid-uKCHMhxwpr .mbr-text {
-  color: #000000;
-}
-.cid-uKCHMhxwpr .mbr-section-subtitle {
-  color: #ffffff;
-  text-align: left;
-}
-.cid-uKCHMhxwpr .main-button {
-  margin-bottom: 2rem;
-}
-@media (max-width: 767px) {
-  .cid-uKCHMhxwpr .main-button {
-    margin-bottom: 2rem;
-  }
-}
-.cid-uKCHMhxwpr .mbr-section-subtitle,
-.cid-uKCHMhxwpr .main-button {
-  color: #000000;
-}
 .cid-uJXdSY7fBn {
   z-index: 1000;
   width: 100%;

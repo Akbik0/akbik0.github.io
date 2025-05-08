@@ -23,7 +23,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&display=swap"></noscript>
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=NkWD1m"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=NkWD1m" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=qxgH2H"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=qxgH2H" type="text/css">
 
   
   
@@ -92,28 +92,86 @@
 	</nav>
 </section>
 
-<section data-bs-version="5.1" class="image08 cid-uKCHMhxwpr" id="image08-12">
-  
-  
-  
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-4">
-        <div class="col-12 col-md-12">
-          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2"><strong>Make connections</strong></h5>
-          <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
-            In problem-solving, creative thinking, or learning, the ability to make connections leads to original solutions.</h6>
-          
-        </div>
-      </div>
-      <div class="col-lg-8 side-features">
-        <div class="image-wrapper mb-4">
-          <img class="w-100" src="assets/images/8.webp" alt="Mobirise Website Builder">
-        </div>
-      </div>
-    </div>
+<meta charset="UTF-8" class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928"><title class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928">Dodge the Dots!</title><style class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928">
+    body {
+      margin: 0;
+      padding: 20px 0 0 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0f0f0f;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+    #game {
+      position: relative;
+      width: 80vw;
+      height: 80vh;
+      background-color: #1a1a1a;
+      border: 4px solid #555;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 30px #000;
+    }
+    .enemy {
+      width: 30px;
+      height: 30px;
+      background-color: crimson;
+      border-radius: 50%;
+      position: absolute;
+      box-shadow: 0 0 8px red;
+    }
+    .powerup {
+      width: 60px;
+      height: 30px;
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 15px;
+      position: absolute;
+      box-shadow: 0 0 10px gold;
+    }
+    #player {
+      width: 40px;
+      height: 40px;
+      background-color: lime;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px 5px transparent;
+      transition: box-shadow 0.3s ease;
+    }
+    #score, #timer {
+      position: absolute;
+      top: 10px;
+      font-size: 20px;
+    }
+    #score { left: 10px; }
+    #timer { right: 10px; }
+    #game-over {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px red;
+    }
+  </style><div id="witsec-html-block-15" class="cid-uKCLgm7zVX" data-rv-view="928">
+    <div id="score">Score: 0</div>
+    <div id="timer">Time: 0s</div>
+    <div id="player"></div>
+    <div id="game-over">Game Over! Refresh to play again.</div>
   </div>
-</section>
 
 <section data-bs-version="5.1" class="footer1 cid-tHfEgJYxcL" once="footers" id="footer01-11">
 	
