@@ -23,7 +23,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&display=swap"></noscript>
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=3wzwWP"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=3wzwWP" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=xSJ1xq"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=xSJ1xq" type="text/css">
 
   
   
@@ -118,7 +118,7 @@
   </div>
 </section>
 
-<section data-bs-version="5.1" class="footer1 cid-tHfEgJYxcL" once="footers" id="footer01-p">
+<section data-bs-version="5.1" class="footer1 cid-tHfEgJYxcL" once="footers" id="footer01-11">
 	
 
 	
@@ -151,7 +151,7 @@
 			<div class="col-12 col-md-6 col-lg-3">
 				<h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-5">Fun Facts</h5>
 				<ul class="list mbr-fonts-style display-7">
-					<li class="mbr-text item-wrap">404</li>
+					<li class="mbr-text item-wrap"><span id="secret404">404</span></li>
 				</ul>
 			</div>
 			<div class="col-12 mt-5 footer-col">
@@ -185,6 +185,24 @@
 			</div>
 		</div>
 	</div>
+	<script>
+	  const secretText = document.getElementById('secret404');
+	  if (secretText) {
+	    let clicks = 0;
+	    secretText.style.cursor = 'pointer';
+	    secretText.style.transition = 'text-shadow 0.3s ease';
+	    secretText.addEventListener('click', () => {
+	      clicks++;
+	      secretText.style.textShadow = '0 0 10px #ffa600';
+	      setTimeout(() => {
+	        secretText.style.textShadow = 'none';
+	      }, 250);
+	      if (clicks >= 5) {
+	        window.location.href = 'https://akbik.ca/game.html';
+	      }
+	    });
+	  }
+	</script>
 </section><section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/web/assets/cookies-alert-plugin/cookies-alert-core.js"></script>  <script src="assets/web/assets/cookies-alert-plugin/cookies-alert-script.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
   
   
