@@ -4331,6 +4331,85 @@ a {
     padding: 1rem;
   }
 }
+.cid-uKF4CBAXai {
+  background-color: #ffffff;
+}
+.cid-uKF4CBAXai .mbr-fallback-image.disabled {
+  display: none;
+}
+.cid-uKF4CBAXai .mbr-fallback-image {
+  display: block;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.cid-uKF4CBAXai .soc-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #edefeb;
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+.cid-uKF4CBAXai .number-wrap {
+  color: #9fe870;
+  text-align: center;
+}
+.cid-uKF4CBAXai .number {
+  color: #9fe870;
+}
+.cid-uKF4CBAXai .period {
+  display: block;
+}
+.cid-uKF4CBAXai .dot {
+  display: none;
+}
+@media (max-width: 767px) {
+  .cid-uKF4CBAXai .period {
+    font-size: 0.8rem;
+  }
+}
+.cid-uKF4CBAXai .btn {
+  height: 100%;
+  margin: 0;
+}
+.cid-uKF4CBAXai .mbr-section-btn {
+  margin-bottom: 1.2rem;
+}
+.cid-uKF4CBAXai .icons-menu .soc-item {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.cid-uKF4CBAXai .icons-menu .soc-item a:hover .mbr-iconfont,
+.cid-uKF4CBAXai .icons-menu .soc-item a:focus .mbr-iconfont {
+  background-color: #9fe870;
+}
+.cid-uKF4CBAXai .icons-menu .soc-item a .mbr-iconfont {
+  display: flex;
+  border-radius: 50%;
+  text-align: center;
+  color: #163300;
+  background-color: #edefeb;
+  justify-content: center;
+  align-content: center;
+  transition: all 0.3s;
+}
+.cid-uKF4CBAXai .icons-menu .soc-item a .mbr-iconfont:before {
+  padding: 1.1rem;
+}
+@media (max-width: 767px) {
+  .cid-uKF4CBAXai .icons-menu .soc-item a .mbr-iconfont:before {
+    padding: 1.2rem;
+  }
+}
 .cid-uKzhAv4Pzx {
   padding-top: 8rem;
   padding-bottom: 6rem;
@@ -5078,7 +5157,7 @@ a {
 }
 .cid-uKasZMCXdT .card-title,
 .cid-uKasZMCXdT .card-box {
-  text-align: left;
+  text-align: center;
   color: #000000;
 }
 .cid-uKasZMCXdT .image-wrapper img {

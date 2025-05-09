@@ -23,7 +23,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&display=swap"></noscript>
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=qxgH2H"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=qxgH2H" type="text/css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=4R2b1h"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=4R2b1h" type="text/css">
 
   
   
@@ -92,22 +92,29 @@
 	</nav>
 </section>
 
-<meta charset="UTF-8" class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928"><title class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928">Dodge the Dots!</title><style class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="928">
+<meta charset="UTF-8" class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="2127"><meta name="viewport" content="width=device-width, initial-scale=1.0" class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="2127"><title class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="2127">Dodge the Dots!</title><style class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="2127">
     body {
       margin: 0;
-      padding: 20px 0 0 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding-top: 120px;
       background-color: #0f0f0f;
       color: white;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    section#game-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
     #game {
       position: relative;
       width: 80vw;
+      max-width: 800px;
       height: 80vh;
       background-color: #1a1a1a;
       border: 4px solid #555;
@@ -166,12 +173,171 @@
       border-radius: 10px;
       box-shadow: 0 0 15px red;
     }
-  </style><div id="witsec-html-block-15" class="cid-uKCLgm7zVX" data-rv-view="928">
-    <div id="score">Score: 0</div>
-    <div id="timer">Time: 0s</div>
-    <div id="player"></div>
-    <div id="game-over">Game Over! Refresh to play again.</div>
-  </div>
+    #start-button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffa600;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ffa600;
+    }
+    img {
+      width: auto;
+    }
+  </style><section id="witsec-html-block-15" class="cid-uKCLgm7zVX">
+    <div id="game">
+      <div id="score">Score: 0</div>
+      <div id="timer">Time: 0s</div>
+      <div id="player"></div>
+      <div id="game-over">Game Over! Refresh to play again.</div>
+    </div>
+    <button id="start-button">Click to Start</button>
+  </section><script class="cid-uKCLgm7zVX" id="witsec-html-block-15" data-rv-view="2127">
+    const game = document.getElementById("game");
+    const player = document.getElementById("player");
+    const scoreDisplay = document.getElementById("score");
+    const gameOverDisplay = document.getElementById("game-over");
+    const timerDisplay = document.getElementById("timer");
+    const startButton = document.getElementById("start-button");
+
+    let score = 0;
+    let isGameOver = false;
+    let spawnRate = 500;
+    let gameLoop, difficultyInterval, powerupInterval, timerInterval;
+    let shielded = false;
+    let activeEnemies = 0;
+    const maxEnemies = 20;
+    let timeElapsed = 0;
+
+    startButton.addEventListener("click", () => {
+      startButton.style.display = "none";
+      startGame();
+    });
+
+    function startGame() {
+      gameLoop = setInterval(() => {
+        if (!isGameOver) {
+          spawnEnemy();
+          spawnEnemy();
+        }
+      }, spawnRate);
+
+      difficultyInterval = setInterval(() => {
+        if (spawnRate > 200) {
+          spawnRate -= 50;
+          clearInterval(gameLoop);
+          gameLoop = setInterval(() => {
+            if (!isGameOver) {
+              spawnEnemy();
+              spawnEnemy();
+            }
+          }, spawnRate);
+        }
+      }, 5000);
+
+      powerupInterval = setInterval(() => {
+        if (!isGameOver) spawnPowerup();
+      }, 10000);
+
+      timerInterval = setInterval(() => {
+        if (!isGameOver) {
+          timeElapsed++;
+          timerDisplay.textContent = `Time: ${timeElapsed}s`;
+        }
+      }, 1000);
+    }
+
+    game.addEventListener("mousemove", (e) => {
+      const rect = game.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      player.style.left = `${x}px`;
+      player.style.top = `${y}px`;
+    });
+
+    function spawnEnemy() {
+      if (activeEnemies >= maxEnemies) return;
+      const enemy = document.createElement("div");
+      enemy.classList.add("enemy");
+      enemy.style.left = `${Math.random() * (game.clientWidth - 30)}px`;
+      enemy.style.top = `-30px`;
+      game.appendChild(enemy);
+      activeEnemies++;
+
+      let speed = 3 + Math.random() * 3;
+
+      function move() {
+        if (isGameOver) return;
+        const currentTop = parseFloat(enemy.style.top);
+        enemy.style.top = `${currentTop + speed}px`;
+
+        const playerRect = player.getBoundingClientRect();
+        const enemyRect = enemy.getBoundingClientRect();
+
+        if (!(playerRect.right < enemyRect.left || playerRect.left > enemyRect.right || playerRect.bottom < enemyRect.top || playerRect.top > enemyRect.bottom)) {
+          if (shielded) {
+            shielded = false;
+            player.style.boxShadow = "0 0 20px 5px transparent";
+            enemy.remove();
+            activeEnemies--;
+            return;
+          }
+          gameOver();
+          return;
+        }
+
+        if (currentTop < game.clientHeight) {
+          requestAnimationFrame(move);
+        } else {
+          game.removeChild(enemy);
+          activeEnemies--;
+          score++;
+          scoreDisplay.textContent = `Score: ${score}`;
+        }
+      }
+
+      requestAnimationFrame(move);
+    }
+
+    function spawnPowerup() {
+      const powerup = document.createElement("div");
+      powerup.classList.add("powerup");
+      powerup.textContent = "SHIELD";
+      powerup.style.left = `${Math.random() * (game.clientWidth - 60)}px`;
+      powerup.style.top = `${Math.random() * (game.clientHeight - 30)}px`;
+      game.appendChild(powerup);
+
+      const interval = setInterval(() => {
+        const playerRect = player.getBoundingClientRect();
+        const powerupRect = powerup.getBoundingClientRect();
+
+        if (!(playerRect.right < powerupRect.left || playerRect.left > powerupRect.right || playerRect.bottom < powerupRect.top || playerRect.top > powerupRect.bottom)) {
+          shielded = true;
+          player.style.boxShadow = "0 0 20px 5px gold";
+          game.removeChild(powerup);
+          clearInterval(interval);
+        }
+      }, 100);
+
+      setTimeout(() => {
+        if (game.contains(powerup)) game.removeChild(powerup);
+        clearInterval(interval);
+      }, 5000);
+    }
+
+    function gameOver() {
+      isGameOver = true;
+      gameOverDisplay.style.display = "block";
+      clearInterval(gameLoop);
+      clearInterval(difficultyInterval);
+      clearInterval(powerupInterval);
+      clearInterval(timerInterval);
+    }
+  </script>
 
 <section data-bs-version="5.1" class="footer1 cid-tHfEgJYxcL" once="footers" id="footer01-11">
 	
